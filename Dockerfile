@@ -4,8 +4,6 @@ FROM python:3.11
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-
-
 # Install any needed packages
 # RUN python -m pip install --upgrade pip
 RUN pip install poetry
@@ -13,7 +11,8 @@ RUN pip install poetry
 COPY ./poetry.lock .
 COPY ./pyproject.toml .
 
-RUN poetry install --no-root
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi --no-root
 
 # Copy the current directory contents into the container at /usr/src/app
 COPY . .
@@ -25,4 +24,4 @@ ENV CLIENT_ID=my-client-id
 ENV CLIENT_CREDENTIALS=my-client-secret
 
 # Run app.py when the container launches
-CMD ["poetry", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD poetry run uvicorn main:app --host 0.0.0.0 --port $PORT
