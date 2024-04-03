@@ -1,5 +1,7 @@
 from fastapi import FastAPI, HTTPException, status
 
+from cosmos import cosmos_test
+
 from jose import jwt
 import httpx
 import os
@@ -76,3 +78,8 @@ def validate_token(token: str):
 async def test_endpoint(token):
     decoded = validate_token(token)
     return {"aud": decoded.get("aud")}
+
+
+@app.get("/cosmostest")
+async def cosmostest_endpoint():
+    return {"answer": cosmos_test()}

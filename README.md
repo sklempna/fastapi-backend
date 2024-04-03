@@ -17,5 +17,5 @@ docker build -t backend .
 run with
 
 ```bash
-docker run -p 8000:8000 -e TENANT_ID=my-tenant-id -e CLIENT_ID=my-client_id -e CLIENT_CREDENTIALS=my-client-credential -e PORT=8000 backend
+docker run -it -p 8000:8000 -e TENANT_ID=my-tenant-id -e CLIENT_ID=my-client_id -e CLIENT_CREDENTIALS=my-client-credential -e PORT=8000 backend
 ```

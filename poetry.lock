@@ -32,6 +32,40 @@ test = ["anyio[trio]", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypo
 trio = ["trio (>=0.23)"]
 
 [[package]]
+name = "azure-core"
+version = "1.30.1"
+description = "Microsoft Azure Core Library for Python"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "azure-core-1.30.1.tar.gz", hash = "sha256:26273a254131f84269e8ea4464f3560c731f29c0c1f69ac99010845f239c1a8f"},
+    {file = "azure_core-1.30.1-py3-none-any.whl", hash = "sha256:7c5ee397e48f281ec4dd773d67a0a47a0962ed6fa833036057f9ea067f688e74"},
+]
+
+[package.dependencies]
+requests = ">=2.21.0"
+six = ">=1.11.0"
+typing-extensions = ">=4.6.0"
+
+[package.extras]
+aio = ["aiohttp (>=3.0)"]
+
+[[package]]
+name = "azure-cosmos"
+version = "4.6.0"
+description = "Microsoft Azure Cosmos Client Library for Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "azure-cosmos-4.6.0.tar.gz", hash = "sha256:daec6ac201c6473b092b62aee71e381beeb6c3a8dc361249832b7048c4f061e2"},
+    {file = "azure_cosmos-4.6.0-py3-none-any.whl", hash = "sha256:b74c0cce0b9e3c6b0059888ff9ccdd1f3108fc972c0079ebd7430484fe6150d9"},
+]
+
+[package.dependencies]
+azure-core = ">=1.25.1"
+typing-extensions = ">=4.6.0"
+
+[[package]]
 name = "certifi"
 version = "2024.2.2"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -717,4 +751,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "570b0e0c7ebb02f526ca5161e84ec9a3fb7698e8b929374236a08de77ec38e8f"
+content-hash = "d57e83a547458e6ad6b99576905e1b083a2456828bc583eee71f8d8d26ba9479"

@@ -23,5 +23,11 @@ ENV TENANT_ID=my-tenant-id
 ENV CLIENT_ID=my-client-id
 ENV CLIENT_CREDENTIALS=my-client-secret
 
+# environment variables for cosmos db access
+ENV COSMOS_ACCOUNT_HOST=my-cosmos-account-host
+ENV COSMOS_MASTER_KEY=my-cosmos-master-key
+ENV COSMOS_DATABASE_ID=my-cosmos-database-id
+ENV COSMOS_CONTAINER_ID=my-cosmos-container-id
+
 # Run app.py when the container launches
 CMD poetry run uvicorn main:app --host 0.0.0.0 --port $PORT
