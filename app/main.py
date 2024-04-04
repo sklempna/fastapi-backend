@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, status
 
-from cosmos import cosmos_test
+from .cosmos import cosmos_test
 
 from jose import jwt
 import httpx

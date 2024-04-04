@@ -30,4 +30,4 @@ ENV COSMOS_DATABASE_ID=my-cosmos-database-id
 ENV COSMOS_CONTAINER_ID=my-cosmos-container-id
 
 # Run app.py when the container launches
-CMD poetry run uvicorn main:app --host 0.0.0.0 --port $PORT
+CMD poetry run uvicorn app.main:app --host 0.0.0.0 --port $PORT
