@@ -19,16 +19,16 @@ resource "azurerm_cosmosdb_account" "cdba" {
 
 resource "azurerm_cosmosdb_sql_database" "cdbdb" {
   name                = var.cosmosdb_database_name
-  resource_group_name = azurerm_resource_group.example.name
-  account_name        = azurerm_cosmosdb_account.example.name
+  resource_group_name = azurerm_resource_group.rg.name
+  account_name        = azurerm_cosmosdb_account.cdba.name
   throughput          = 400 # Minimum throughput for SQL API
 }
 
 resource "azurerm_cosmosdb_sql_container" "cdbcont" {
   name                = var.cosmosdb_container_name
-  resource_group_name = azurerm_resource_group.example.name
-  account_name        = azurerm_cosmosdb_account.example.name
-  database_name       = azurerm_cosmosdb_sql_database.example.name
+  resource_group_name = azurerm_resource_group.rg.name
+  account_name        = azurerm_cosmosdb_account.cdba.name
+  database_name       = azurerm_cosmosdb_sql_database.cdbdb.name
   partition_key_path  = "/examplePartitionKey"
 
   throughput          = 400 # Minimum throughput for SQL API
