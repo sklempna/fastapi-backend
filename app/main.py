@@ -6,6 +6,11 @@ from .auth import validate_token
 app = FastAPI()
 
 
+@app.get("/health")
+async def health_check():
+    return {"status": "online"}
+
+
 @app.get("/test")
 async def test_endpoint(token):
     decoded = validate_token(token)
