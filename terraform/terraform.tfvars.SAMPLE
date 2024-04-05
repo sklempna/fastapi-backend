@@ -1,3 +1,5 @@
 resource_group_name     = "example-resources"
 resource_group_location = "East US"
 cosmosdb_account_name   = "example-cosmosdb-account"
+cosmosdb_database_name   = "example-cosmosdb-database"
+cosmosdb_container_name   = "example-cosmosdb-container"

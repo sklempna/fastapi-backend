@@ -12,3 +12,13 @@ variable "cosmosdb_account_name" {
   description = "The name of the Cosmos DB account"
   type        = string
 }
+
+variable "cosmosdb_database_name" {
+  description = "The name of the Cosmos DB database"
+  type        = string
+}
+
+variable "cosmosdb_container_name" {
+  description = "The name of the Cosmos DB container"
+  type        = string
+}
