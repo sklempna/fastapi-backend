@@ -38,6 +38,23 @@ def get_item_by_id(item_id: str):
         raise HTTPException(status_code=e.status_code, detail=str(e))
 
 
+def update_item_with_id(item_id: str, update_item: Item):
+    try:
+        read_item = container.read_item(item=item_id, partition_key=item_id)
+        if not read_item:
+            raise HTTPException(status_code=404, detail="Item not found")
+
+        # If the item exists, update it with the values from `update_item`
+        for key, value in update_item.model_dump().items():
+            read_item[key] = value
+
+        updated_item = container.upsert_item(body=read_item)
+        return updated_item
+    except exceptions.CosmosHttpResponseError as e:
+        # If an error occurs with Cosmos DB, return an HTTP exception
+        raise HTTPException(status_code=e.status_code, detail=str(e))
+
+
 def create_item(item: Item):
     try:
         # Try to create the document in Cosmos DB

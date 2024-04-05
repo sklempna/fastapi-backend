@@ -29,7 +29,7 @@ resource "azurerm_cosmosdb_sql_container" "cdbcont" {
   resource_group_name = azurerm_resource_group.rg.name
   account_name        = azurerm_cosmosdb_account.cdba.name
   database_name       = azurerm_cosmosdb_sql_database.cdbdb.name
-  partition_key_path  = "/examplePartitionKey"
+  partition_key_path  = "/id"
 
   throughput          = 400 # Minimum throughput for SQL API
 }
