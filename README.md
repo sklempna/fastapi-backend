@@ -34,5 +34,6 @@ Steps:
 - log into the azure portal and open a cloud shell
 - clone this repository `git clone https://github.com/sklempna/fastapi-backend`
 - go into the terraform project `cd fastapi-backend/terraform`
+- create a terraform variables file: `cp terraform.tfvars.SAMPLE terraform.tfvars` and edit it. Note that some names (search service and cosmos account name) have to be globally unique.
 - initialize terraform state `terraform init`
 - run terraform `terraform apply`
