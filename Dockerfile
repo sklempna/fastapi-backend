@@ -29,5 +29,10 @@ ENV COSMOS_MASTER_KEY=my-cosmos-master-key
 ENV COSMOS_DATABASE_ID=my-cosmos-database-id
 ENV COSMOS_CONTAINER_ID=my-cosmos-container-id
 
+# environment variables for azure ai search
+ENV SEARCH_SERVICE_ENDPOINT=my-search-service-endpoint
+ENV SEARCH_INDEX_NAME=my-search-index-name
+ENV SEARCH_API_KEY=my-search-api-key
+
 # Run app.py when the container launches
 CMD poetry run uvicorn app.main:app --host 0.0.0.0 --port $PORT
