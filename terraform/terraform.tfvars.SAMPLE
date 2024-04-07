@@ -7,5 +7,5 @@ cosmosdb_container_name   = "example-cosmosdb-container"
 search_service_name = "example-search-service"
 search_sku = "standard"
 search_replica_count = "1"
-search_partition_count = 1"
+search_partition_count = "1"
 
